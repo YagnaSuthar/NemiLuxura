@@ -38,13 +38,17 @@ const loginUser = async (req, res) => {
 const registerUser = async (req, res) => {
     try {
         const { name, email, password } = req.body;
-        // checking user already exists or not 
+        console.log('Registration attempt:', { name, email });
+
+        // checking user already exists or not
         const exists = await userModel.findOne({ email });
+        console.log('User exists check:', exists ? 'Found existing user' : 'No existing user');
         if (exists) {
+            console.log('Registration failed: User already exists with email:', email);
             return res.json({ success: false, message: "User Already Exists" });
         }
 
-        // validatin email format and strogn password 
+        // validatin email format and strogn password
         if (!validator.isEmail(email)) {
             return res.json({ success: false, message: "please enter valid email" });
 
@@ -54,7 +58,7 @@ const registerUser = async (req, res) => {
 
         }
 
-        // /hasing user password 
+        // /hasing user password
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -65,13 +69,13 @@ const registerUser = async (req, res) => {
         })
 
         const user = await newUser.save()
-
+        console.log('User created successfully:', { _id: user._id, email: user.email });
 
         const token = createToken(user._id);
         res.json({ success: true, token, user: { _id: user._id, name: user.name, email: user.email } })
 
     } catch (error) {
-        console.log(error);
+        console.log('Registration error:', error);
         res.json({ success: false, message: error.message })
     }
 }
