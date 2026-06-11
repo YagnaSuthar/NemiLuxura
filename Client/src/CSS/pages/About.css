@@ -1,0 +1,956 @@
+/* ========== GLOBAL STYLES ========== */
+.about-page-about {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* ========== SCROLL REVEAL ANIMATIONS ========== */
+.scroll-reveal-about {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal-about.visible-about {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== KEYFRAME ANIMATIONS ========== */
+@keyframes fadeInUp-about {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft-about {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight-about {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn-about {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float-about {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-about {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotateGradient-about {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slideDown-about {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========== STATS HERO SECTION ========== */
+.stats-hero-section-about {
+  background: linear-gradient(135deg, var(--surface-light) 0%, var(--primary-color) 100%);
+  padding: 60px 40px;
+}
+
+.stats-hero-container-about {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.stat-hero-item-about {
+  text-align: center;
+  padding: 30px 20px;
+  background: var(--primary-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp-about 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.stat-hero-item-about:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.stat-hero-icon-about {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-accent) 100%);
+  border-radius: 50%;
+  color: var(--text-inverse);
+  animation: pulse-about 2s ease-in-out infinite;
+}
+
+.stat-hero-value-about {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.stat-hero-label-about {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* ========== MISSION & VISION SECTION ========== */
+.mission-vision-section-about {
+  padding: 80px 40px;
+  background: var(--primary-color);
+}
+
+.mission-vision-container-about {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 50px;
+  align-items: center;
+}
+
+.mission-vision-image-about {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px var(--shadow-color);
+  animation: fadeInLeft-about 1s ease-out;
+}
+
+.mission-vision-image-about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.mission-vision-image-about:hover img {
+  transform: scale(1.05);
+}
+
+.mission-vision-content-about {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.mission-box-about,
+.vision-box-about {
+  animation: fadeInRight-about 1s ease-out;
+}
+
+.mission-icon-about,
+.vision-icon-about {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 16px;
+  animation: float-about 3s ease-in-out infinite;
+}
+
+.mission-icon-about {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-accent) 100%);
+  color: var(--text-inverse);
+}
+
+.vision-icon-about {
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--btn-hover-bg) 100%);
+  color: var(--text-inverse);
+}
+
+.mission-title-about,
+.vision-title-about {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mission-description-about,
+.vision-description-about {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* ========== CORE VALUES SECTION ========== */
+.core-values-section-about {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--surface-light) 0%, var(--primary-color) 100%);
+}
+
+.core-values-container-about {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.core-values-heading-about {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.core-values-subheading-about {
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.core-values-grid-about {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.core-value-card-about {
+  background: var(--primary-color);
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: scaleIn-about 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.core-value-card-about:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.core-value-icon-about {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-accent) 100%);
+  border-radius: 50%;
+  color: var(--text-inverse);
+  animation: pulse-about 2.5s ease-in-out infinite;
+}
+
+.core-value-title-about {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.core-value-description-about {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ========== JOURNEY TIMELINE SECTION ========== */
+.journey-section-about {
+  padding: 80px 40px;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, var(--background-accent) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.journey-section-about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(16, 45, 107, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(14, 37, 97, 0.3) 0%, transparent 50%);
+  animation: rotateGradient-about 15s ease infinite;
+  background-size: 200% 200%;
+}
+
+.journey-container-about {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.journey-heading-about {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-inverse);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.journey-subheading-about {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.journey-timeline-about {
+  position: relative;
+}
+
+.journey-timeline-about::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3), transparent);
+  transform: translateX(-50%);
+}
+
+.journey-item-about {
+  display: flex;
+  margin-bottom: 50px;
+  position: relative;
+  opacity: 0;
+  animation: none;
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.journey-item-about.visible-about {
+  animation: fadeInUp-about 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.journey-item-about:nth-child(1).visible-about {
+  animation-delay: 0s;
+}
+
+.journey-item-about:nth-child(2).visible-about {
+  animation-delay: 0.25s;
+}
+
+.journey-item-about:nth-child(3).visible-about {
+  animation-delay: 0.5s;
+}
+
+.journey-item-about:nth-child(4).visible-about {
+  animation-delay: 0.75s;
+}
+
+.journey-item-about:nth-child(5).visible-about {
+  animation-delay: 1s;
+}
+
+.journey-item-about.left-about {
+  justify-content: flex-end;
+  padding-right: calc(50% + 35px);
+}
+
+.journey-item-about.right-about {
+  justify-content: flex-start;
+  padding-left: calc(50% + 35px);
+}
+
+.journey-item-about::after {
+  content: '';
+  position: absolute;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  border: 3px solid var(--secondary-color);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+  animation: pulse-about 2s ease-in-out infinite;
+}
+
+.journey-item-about.left-about::after {
+  right: calc(50% - 8px);
+}
+
+.journey-item-about.right-about::after {
+  left: calc(50% - 8px);
+}
+
+.journey-card-about {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 350px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+}
+
+.journey-card-about:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.journey-year-about {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-color) 0%, rgba(255, 255, 255, 0.9) 100%);
+  color: var(--secondary-color);
+  padding: 6px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.journey-title-about {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-inverse);
+  margin-bottom: 10px;
+}
+
+.journey-description-about {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ========== TEAM SECTION ========== */
+.team-section-about {
+  padding: 80px 40px;
+  background: var(--primary-color);
+}
+
+.team-container-about {
+
+  margin: 0 auto;
+}
+
+.team-heading-about {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.team-subheading-about {
+  font-size: 16px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-grid-about {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+
+.team-card-about {
+  background: var(--primary-color);
+  padding: 32px 24px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 16px var(--shadow-color);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: scaleIn-about 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.team-card-about:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px var(--shadow-color);
+}
+
+.team-image-about {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, var(--secondary-color) 0%, var(--background-accent) 100%) border-box;
+  transition: transform 0.4s ease;
+}
+
+.team-card-about:hover .team-image-about {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.team-image-about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-name-about {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.team-position-about {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondary-color);
+  margin-bottom: 12px;
+}
+
+.team-description-about {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.inline-wordmark-dark {
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+  margin: 0 0.25rem;
+}
+
+.team-social-about {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.social-btn-about {
+  padding: 8px 20px;
+  border: 2px solid var(--border-light);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-btn-about:hover {
+  background: var(--secondary-color);
+  color: var(--text-inverse);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.team-image-about {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+  transition: transform 0.4s ease;
+}
+
+.team-card-about:hover .team-image-about {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.team-image-about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-name-about {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.team-position-about {
+  font-size: 16px;
+  font-weight: 600;
+  color: #667eea;
+  margin-bottom: 16px;
+}
+
+.team-description-about {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.team-social-about {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-btn-about {
+  padding: 10px 24px;
+  border: 2px solid var(--border-light);
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-btn-about:hover {
+  background: var(--secondary-color);
+  color: var(--text-inverse);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1200px) {
+  .stats-hero-container-about {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .core-values-grid-about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .mission-vision-container-about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mission-vision-image-about {
+    order: -1;
+    max-height: 350px;
+  }
+
+  .journey-item-about.left-about,
+  .journey-item-about.right-about {
+    padding: 0 0 0 50px;
+    justify-content: flex-start;
+  }
+
+  .journey-timeline-about::before {
+    left: 18px;
+  }
+
+  .journey-item-about::after {
+    left: 10px !important;
+  }
+
+  .journey-card-about {
+    max-width: 100%;
+  }
+
+  .team-grid-about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-hero-section-about {
+    padding: 50px 30px;
+  }
+
+  .stats-hero-container-about {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat-hero-item-about {
+    padding: 24px 20px;
+  }
+
+  .mission-vision-section-about,
+  .core-values-section-about,
+  .journey-section-about,
+  .team-section-about {
+    padding: 60px 30px;
+  }
+
+  .core-values-heading-about,
+  .journey-heading-about,
+  .team-heading-about {
+    font-size: 34px;
+  }
+
+  .core-values-subheading-about,
+  .journey-subheading-about,
+  .team-subheading-about {
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+
+  .core-values-grid-about {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .core-value-card-about {
+    padding: 28px 20px;
+  }
+
+  .journey-subheading-about {
+    margin-bottom: 50px;
+  }
+
+  .team-grid-about {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mission-title-about,
+  .vision-title-about {
+    font-size: 26px;
+  }
+
+  .mission-description-about,
+  .vision-description-about {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-hero-section-about {
+    padding: 40px 20px;
+  }
+
+  .stat-hero-item-about {
+    padding: 20px 16px;
+  }
+
+  .stat-hero-icon-about {
+    width: 50px;
+    height: 50px;
+  }
+
+  .stat-hero-value-about {
+    font-size: 32px;
+  }
+
+  .stat-hero-label-about {
+    font-size: 13px;
+  }
+
+  .mission-vision-section-about,
+  .core-values-section-about,
+  .journey-section-about,
+  .team-section-about {
+    padding: 50px 20px;
+  }
+
+  .core-values-heading-about,
+  .journey-heading-about,
+  .team-heading-about {
+    font-size: 30px;
+  }
+
+  .core-values-subheading-about,
+  .journey-subheading-about,
+  .team-subheading-about {
+    font-size: 14px;
+  }
+
+  .core-value-card-about {
+    padding: 24px 18px;
+  }
+
+  .core-value-icon-about {
+    width: 52px;
+    height: 52px;
+  }
+
+  .core-value-title-about {
+    font-size: 18px;
+  }
+
+  .core-value-description-about {
+    font-size: 13px;
+  }
+
+  .mission-title-about,
+  .vision-title-about {
+    font-size: 24px;
+  }
+
+  .mission-description-about,
+  .vision-description-about {
+    font-size: 14px;
+  }
+
+  .mission-icon-about,
+  .vision-icon-about {
+    width: 48px;
+    height: 48px;
+  }
+
+  .journey-item-about.left-about,
+  .journey-item-about.right-about {
+    padding: 0 0 0 40px;
+  }
+
+  .journey-card-about {
+    padding: 20px;
+  }
+
+  .journey-year-about {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+
+  .journey-title-about {
+    font-size: 18px;
+  }
+
+  .journey-description-about {
+    font-size: 13px;
+  }
+
+  .team-card-about {
+    padding: 28px 20px;
+  }
+
+  .team-image-about {
+    width: 100px;
+    height: 100px;
+  }
+
+  .team-name-about {
+    font-size: 20px;
+  }
+
+  .team-position-about {
+    font-size: 14px;
+  }
+
+  .team-description-about {
+    font-size: 13px;
+  }
+
+  .social-btn-about {
+    padding: 7px 18px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+
+  .core-values-heading-about,
+  .journey-heading-about,
+  .team-heading-about {
+    font-size: 26px;
+  }
+
+  .stat-hero-value-about {
+    font-size: 28px;
+  }
+
+  .journey-item-about.left-about,
+  .journey-item-about.right-about {
+    padding: 0 0 0 35px;
+  }
+
+  .team-social-about {
+    flex-direction: column;
+  }
+
+  .social-btn-about {
+    width: 100%;
+  }
+}

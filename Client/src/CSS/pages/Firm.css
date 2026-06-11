@@ -1,0 +1,739 @@
+/* Professional Product Page Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes fadeInUp-product {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn-product {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.product-page-product {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Navigation Tabs */
+.tabs-container-product {
+  background: #ffffff;
+  /* border-bottom: 2px solid #f0f0f0; */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+}
+
+.tabs-container-product {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 0;
+  padding: 0;
+}
+
+.tab-button-product {
+  flex: 1;
+  padding: 20px 40px;
+  border: none;
+  background: transparent;
+  color: #666;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.tab-button-product::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0b1e4e, #1a3a8f);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-button-product:hover {
+  color: #0b1e4e;
+}
+
+.tab-button-product.active-product {
+  color: #0b1e4e;
+}
+
+.tab-button-product.active-product::after {
+  transform: scaleX(1);
+}
+
+/* Section Container */
+.section-product {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section-product {
+  padding: 80px 0 60px;
+  opacity: 0;
+  animation: fadeInUp-product 0.8s ease forwards;
+}
+
+.hero-content-product {
+  text-align: center;
+}
+
+.hero-title-product {
+  font-size: 48px;
+  color: #0b1e4e;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle-product {
+  font-size: 24px;
+  color: #1a3a8f;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+.hero-description-product {
+  font-size: 18px;
+  color: #666;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+
+.hero-image-wrapper-product {
+  margin-top: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(11, 30, 78, 0.1);
+}
+
+.hero-image-product {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.hero-image-product:hover {
+  transform: scale(1.02);
+}
+
+/* Content Section */
+.content-section-product {
+  padding: 60px 0;
+  opacity: 0;
+  animation: fadeInUp-product 0.8s ease forwards;
+  animation-delay: 0.2s;
+}
+
+.content-container-product {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Section Headings */
+.section-heading-product {
+  font-size: 36px;
+  color: #0b1e4e;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.section-divider-product {
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #0b1e4e, #1a3a8f);
+  margin-bottom: 30px;
+}
+
+.section-intro-product {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+
+/* Foam List */
+.foam-list-product {
+  margin: 50px 0;
+}
+
+.foam-item-product {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  animation: slideIn-product 0.5s ease backwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.foam-item-product:nth-child(1) {
+  --index: 1;
+}
+
+.foam-item-product:nth-child(2) {
+  --index: 2;
+}
+
+.foam-item-product:nth-child(3) {
+  --index: 3;
+}
+
+.foam-item-product:nth-child(4) {
+  --index: 4;
+}
+
+.foam-item-product:nth-child(5) {
+  --index: 5;
+}
+
+.foam-item-product:nth-child(6) {
+  --index: 6;
+}
+
+.foam-item-product:nth-child(7) {
+  --index: 7;
+}
+
+.foam-item-product:hover {
+  padding-left: 15px;
+  border-left: 3px solid #1a3a8f;
+}
+
+.foam-number-product {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a3a8f;
+  min-width: 40px;
+}
+
+.foam-details-product {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foam-name-product {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+
+.foam-status-product {
+  font-size: 14px;
+  color: #0b1e4e;
+  background: #f0f4ff;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Quality Content */
+.quality-content-product {
+  margin-top: 80px;
+}
+
+.heading-with-wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.product-wordmark-img {
+  height: 2rem;
+  object-fit: contain;
+}
+
+.product-wordmark-img-1 {
+  height: 1rem;
+  object-fit: contain;
+
+}
+
+.wordmark-inline {
+  display: inline-block;
+  vertical-align: baseline;
+  object-fit: contain;
+  width: auto;
+  max-width: 100%;
+  position: relative;
+  top: 0.08em;
+}
+
+.quality-text-product {
+  margin-top: 40px;
+}
+
+.quality-paragraph-product {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.quality-highlight-product {
+  color: #0b1e4e;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* Layers Content */
+.layers-content-product {
+  margin: 50px 0;
+}
+
+.layer-item-product {
+  padding: 30px 0;
+}
+
+.layer-header-product {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.layer-number-badge-product {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #0b1e4e, #1a3a8f);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.layer-title-product {
+  font-size: 22px;
+  color: #0b1e4e;
+  font-weight: 600;
+}
+
+.layer-text-product {
+  font-size: 16px;
+  color: #666;
+  margin-left: 65px;
+  line-height: 1.8;
+}
+
+.layer-separator-product {
+  height: 1px;
+  background: #f0f0f0;
+  margin: 30px 0;
+}
+
+/* Features Content */
+.features-content-product {
+  margin-top: 80px;
+}
+
+.feature-block-product {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.feature-block-product:last-child {
+  border-bottom: none;
+}
+
+.feature-header-product {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.feature-icon-product {
+  color: #1a3a8f;
+  flex-shrink: 0;
+}
+
+.feature-title-product {
+  font-size: 24px;
+  color: #0b1e4e;
+  font-weight: 600;
+}
+
+.feature-description-product {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.9;
+  margin-left: 47px;
+  text-align: justify;
+}
+
+/* Mattresses Content */
+.mattresses-content-product {
+  margin-top: 80px;
+}
+
+.mattress-item-product {
+  margin-bottom: 50px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mattress-item-product:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.mattress-name-product {
+  font-size: 26px;
+  color: #0b1e4e;
+  font-weight: 600;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.mattress-description-product {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+/* Doux Content */
+.doux-content-product {
+  margin-top: 80px;
+}
+
+.doux-list-product {
+  list-style: none;
+  margin-top: 30px;
+}
+
+.doux-item-product {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  animation: slideIn-product 0.5s ease backwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.doux-item-product:nth-child(1) {
+  --index: 1;
+}
+
+.doux-item-product:nth-child(2) {
+  --index: 2;
+}
+
+.doux-item-product:nth-child(3) {
+  --index: 3;
+}
+
+.doux-item-product:nth-child(4) {
+  --index: 4;
+}
+
+.doux-item-product:hover {
+  background: #f8f9ff;
+  border-left-color: #1a3a8f;
+}
+
+.doux-check-product {
+  color: #1a3a8f;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.doux-item-product span {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Pillow Section */
+.pillow-section-product {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+}
+
+.pillow-header-product {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 25px;
+}
+
+.pillow-emoji-product {
+  font-size: 60px;
+  flex-shrink: 0;
+}
+
+.pillow-title-group-product {
+  flex: 1;
+}
+
+.pillow-name-product {
+  font-size: 32px;
+  color: #0b1e4e;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.pillow-subtitle-product {
+  font-size: 18px;
+  color: #1a3a8f;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.pillow-description-product {
+  font-size: 17px;
+  color: #555;
+  margin-bottom: 30px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.pillow-features-section-product {
+  margin: 35px 0;
+}
+
+.features-heading-product {
+  font-size: 20px;
+  color: #0b1e4e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.features-list-product {
+  list-style: none;
+}
+
+.feature-item-product {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px 0;
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+  border-bottom: 1px solid #f5f5f5;
+  transition: all 0.3s ease;
+}
+
+.feature-item-product:last-child {
+  border-bottom: none;
+}
+
+.feature-item-product:hover {
+  padding-left: 10px;
+}
+
+.feature-check-product {
+  color: #1a3a8f;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.best-for-section-product {
+  background: #f8f9ff;
+  padding: 25px;
+  border-radius: 8px;
+  border-left: 4px solid #1a3a8f;
+  margin-top: 30px;
+}
+
+.best-for-label-product {
+  display: block;
+  font-size: 18px;
+  color: #0b1e4e;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.best-for-text-product {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.pillow-divider-product {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e0e0e0, transparent);
+  margin: 60px 0;
+}
+
+/* Scroll Reveal */
+.scroll-reveal-product {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.scroll-reveal-product.visible-product {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-page-product {
+    padding: 0;
+  }
+
+  .section-product {
+    padding: 0 15px;
+  }
+
+  .tabs-container-product {
+    flex-direction: column;
+  }
+
+  .tab-button-product {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .hero-section-product {
+    padding: 50px 0 40px;
+  }
+
+  .hero-title-product {
+    font-size: 32px;
+  }
+
+  .hero-subtitle-product {
+    font-size: 18px;
+  }
+
+  .hero-description-product {
+    font-size: 16px;
+  }
+
+  .hero-image-product {
+    height: 300px;
+  }
+
+  .content-section-product {
+    padding: 40px 0;
+  }
+
+  .section-heading-product {
+    font-size: 28px;
+  }
+
+  .foam-item-product {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .foam-details-product {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .quality-paragraph-product,
+  .feature-description-product,
+  .mattress-description-product {
+    text-align: left;
+    margin-left: 0;
+  }
+
+  .layer-text-product {
+    margin-left: 0;
+  }
+
+  .mattress-name-product {
+    font-size: 22px;
+  }
+
+  .pillow-header-product {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .pillow-name-product {
+    font-size: 26px;
+  }
+
+  .pillow-emoji-product {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-product {
+    font-size: 26px;
+  }
+
+  .hero-subtitle-product {
+    font-size: 16px;
+  }
+
+  .section-heading-product {
+    font-size: 24px;
+  }
+
+  .foam-name-product {
+    font-size: 18px;
+  }
+
+  .pillow-name-product {
+    font-size: 22px;
+  }
+
+  .mattress-name-product {
+    font-size: 20px;
+  }
+}
