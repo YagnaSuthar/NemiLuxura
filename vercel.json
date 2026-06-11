@@ -1,0 +1,6 @@
+{
+  "buildCommand": "echo 'No root build - deploy subfolders separately'",
+  "installCommand": "echo 'No root install - deploy subfolders separately'",
+  "outputDirectory": ".",
+  "framework": null
+}
